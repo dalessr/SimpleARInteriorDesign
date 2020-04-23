@@ -101,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
             nodeToremove.getAnchor().detach();
             nodeToremove.setParent(null);
             nodeToremove = null;
+
+            int lastIdx = arFragment.getArSceneView().getScene().getChildren().size() - 1;
+            // Toast.makeText(getApplicationContext(), Integer.toString(lastIdx), Toast.LENGTH_SHORT).show();
+            if (lastIdx > 1) {
+                anchorNode = (AnchorNode) arFragment.getArSceneView().getScene().getChildren().get(lastIdx);
+            }
         }
     }
 }
